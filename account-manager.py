@@ -4,7 +4,15 @@ from datetime import date
 list_of_accounts = {}
 
 
+def generate_id():
+    value = 0
+    id = myconstants.COMPANY_ID + str(value)
+    yield id
+    value += 1
+
+
 def add(list_of_accounts):
+    # account_id = generate_id()
     year = date.today()
     name = input('Enter your name: ')
     pan_card_number = input('Enter your pan details: ')
@@ -13,9 +21,13 @@ def add(list_of_accounts):
     secondary_number = input('Enter your secondary contact number: ')
     amount = input('Enter the amount your depositing: ')
     account_id = myconstants.ACCOUNT_ID + name[0:2] + str(year.year % 100)
-    list_of_accounts[account_id] = {'name': name, 'pan_and_aadhar_details': (pan_card_number, aadhar_card_number),
-                                    'contact_number': [primary_number, secondary_number], 'account_balance': amount,
-                                    'transactions': []}
+
+    list_of_accounts[account_id] = {'name': name,
+                                          'pan_and_aadhar_details': (pan_card_number, aadhar_card_number),
+                                          'contact_number': [primary_number, secondary_number],
+                                          'account_balance': amount,
+                                          'transactions': []}
+
     return list_of_accounts
 
 

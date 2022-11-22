@@ -174,3 +174,5 @@ import time
 # # # print(a.__sizeof__())
 # print(b.__sizeof__())
 # print(c.__sizeof__())
+
+# is operator & ==

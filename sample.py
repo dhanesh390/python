@@ -53,8 +53,8 @@
 # else:
 #     print("Completed the calculation")
 
-# x = 1
-# y = 1
+# x = 'Apple'
+# y = 'apple'
 #
 # print(id(x))
 # print(id(y))
@@ -64,18 +64,72 @@
 # print('appended list: ', id(z))
 
 
-def generate():
-    # print('id of i: ', id(i))
-    i = 0
-    yield i**2
+# def generate():
+#     # print('id of i: ', id(i))
+#     i = 0
+#     yield i**2
+#
+#
+# for y in range(3):
+#     print('id of y: ', id(y))
+#     print(id(generate()))
+#     z = generate()
+#     next(z)
+#     print('z is :', z)
+#     print('genrated: ', list(z))
+#     print('id of generated y: ', id(z))
+
+# list = [1, 2, 3, 1, 1, 1, 2, 3]
+# dic = {}
+# for i in list:
+#     list.count(i)
+#     dic[i] = list.count(i)
+# print(dic)
+#
+# dic = {}
+# count = 0
+# for i in list:
+#     if i in dic and dic[i]:
+#         dic[i] += 1
+#     else:
+#         dic[i] = 1
+#
+# print(dic)
+#
+# count = 0
+# for i in list:
+#     if dic.get(i):
+#         dic[i] += 1
+#     else:
+#         dic[i] = 1
+#
+# print(dic)
+
+# count = 0
+# for i in list:
+#     for j in list:
+#         if i == j:
+#             count += 1
+#     dic[i] = count
+#
+#
+# print(dic)
 
 
-for y in range(3):
-    print('id of y: ', id(y))
-    print(id(generate()))
-    z = generate()
-    next(z)
-    print('z is :', z)
-    print('genrated: ', list(z))
-    print('id of generated y: ', id(z))
+list_of_ids = [1, 2, 3, 4, 5, 6]
+list_of_names = ['Dhanesh', 'Gowtham', 'Deepak', 'Siva', 'Hari', 'Dhanesh']
+list_of_age = [22, 22, 21, 20, 22, 20]
+list_of_keys = ['id', 'name', 'age']
 
+sample_list = zip(list_of_ids, list_of_names, list_of_age)
+
+sample_dict = [{'id': values[0], 'name': values[1], 'age': values[2]}for values in sample_list]
+print(list(sample_dict))
+
+
+#  {keys[0]: values[0], keys[1]: values[1], keys[2]: values[2]}
+# for i in sample_list:
+#     print(i)
+#
+# second_dict = [list_of_keys[key] for values in sample_list for key in values]
+# print(second_dict)

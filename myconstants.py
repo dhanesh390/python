@@ -6,3 +6,5 @@ TRUE = True
 FALSE = False
 
 COMPANY_ID = 'i2i'
+
+ACCOUNT_ID = 'i2i'

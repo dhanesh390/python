@@ -82,6 +82,6 @@ for number in numbers:
 # for number in comprehensed_generator:
 #     print(number)
 #
-# print('generated comp sum: ', sum(number**2 for number in range(1, 11) if number % 2 == 0))
+print('generated comp sum: ', sum(number**2 for number in range(1, 11) if number % 2 == 0))
 
 

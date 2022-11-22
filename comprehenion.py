@@ -69,25 +69,25 @@
 
 
 
-first_list = {1: 2, 2: 3, 3: 4, 4: 5}
-second_list = (2,)
-third_list = [1, 2]
-
-
-def add(a, b):
-    return a + b
-
-
-"""
- Zip function only takes iterables as input and returns a list
- -> It can take 0 arguments as well as n number of arguments
-"""
-print('Zip: ', list(zip(first_list, second_list, third_list)))
-"""
- Map takes arguments based on the function provided it works similar
- to zip function only works until the least iterable object provided in the lists
-"""
-print('map : ', list(map(add, first_list, second_list)))
+# first_list = {1: 2, 2: 3, 3: 4, 4: 5}
+# second_list = (2,)
+# third_list = [1, 2]
+#
+#
+# def add(a, b):
+#     return a + b
+#
+#
+# """
+#  Zip function only takes iterables as input and returns a list
+#  -> It can take 0 arguments as well as n number of arguments
+# """
+# print('Zip: ', list(zip(first_list, second_list, third_list)))
+# """
+#  Map takes arguments based on the function provided it works similar
+#  to zip function only works until the least iterable object provided in the lists
+# """
+# print('map : ', list(map(add, first_list, second_list)))
 #
 #
 # sample_list_one = [1, 2, 3, 4, 5, 6]
