@@ -123,13 +123,12 @@ list_of_keys = ['id', 'name', 'age']
 
 sample_list = zip(list_of_ids, list_of_names, list_of_age)
 
-sample_dict = [{'id': values[0], 'name': values[1], 'age': values[2]}for values in sample_list]
-print(list(sample_dict))
+# first_dictionary = [{'id': values[0], 'name': values[1], 'age': values[2]}for values in sample_list]
+# print(list(first_dictionary))
 
 
-#  {keys[0]: values[0], keys[1]: values[1], keys[2]: values[2]}
-# for i in sample_list:
-#     print(i)
-#
-# second_dict = [list_of_keys[key] for values in sample_list for key in values]
-# print(second_dict)
+second_dictionary = [{list_of_keys[0]: values[0], list_of_keys[1]: values[1], list_of_keys[2]: values[2]}
+                     for keys in list_of_keys for values in sample_list]
+print(list(second_dictionary))
+
+

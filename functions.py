@@ -1,6 +1,7 @@
 import functools
+
 first_list = {1: 2, 2: 3, 3: 4, 4: 5}
-second_list = (2, 3)
+second_list = (1, 2, 3, 4)
 third_list = [1, 2]
 fourth_variable = 'Java', 'python'
 fifth_variable = 4
@@ -30,6 +31,8 @@ print('Zip 2: ', list(zip(first_list, fourth_variable)))
 """
 print('map 1: ', list(map(add, first_list, second_list)))
 
+# print('map 0: ', list(map(add, zip(first_list, second_list), third_list)))
+
 """ 
  Similar to zip function, Map function also does not take single 
  value object as input as it only takes iterables 
@@ -46,6 +49,7 @@ def is_even(b):
     return b % 2 == 0
 
 
+print('zip 4: ', list(zip(first_list, filter(is_even, second_list))))
 """ 
  Filter function takes a function and iterable as argument 
  and return the value which return values that checks the condition
@@ -58,12 +62,20 @@ print('filter 1: ', set(filtered_list))
  Even filter does not take single value as input
 '''
 filtered_list_two = filter(is_even, fourth_variable)
+
+filter_list_three = filter(is_even, map(add, first_list, second_list))
+
+
+# filter_list_four = filter(is_even, map(add, zip(first_list, second_list), third_list))
+# print('fiter map zip: ', list(filter_list_four))
+
+print('filter 0: ', list(filter_list_three))
 # print('filter 2: ', list(filtered_list_two))
 """
  Where as when the same is called in map it returns the entire values 
  as boolean values for the whole arguments 
 """
-mapped_list = map(is_even, sample_list) # Check for multiple variables
+mapped_list = map(is_even, sample_list)  # Check for multiple variables
 print('mapped type: ', type(mapped_list))
 print('map 3: ', list(mapped_list))
 
@@ -78,6 +90,25 @@ print('reduce 1: ', reduce_list)
 reduct_list = functools.reduce(add, fourth_variable)
 print('reduce type for String: ', type(reduct_list))
 print('reduce 2: ', reduct_list)
+
+""" It throws a type error as the reduce function here returns int """
+# reduce_first_list = zip(second_list, functools.reduce(add, first_list))
+# print('reduced zip 1: ', reduce_first_list)
+
+#  Reduce doesn't work with int types whereas it works for other iterables
+reduce_second_list = zip(second_list, functools.reduce(add, fourth_variable))
+print('reduced zip 2: ', list(reduce_second_list))
+
+# reduce_first_list = map(add, second_list, functools.reduce(add, first_list))
+# print('reduced zip 3: ', reduce_first_list)
+
+
+def add(a, b):
+    return str(a) + str(b)
+
+
+reduce_second_map = map(add, second_list, functools.reduce(add, fourth_variable))
+print('reduced zip 4: ', list(reduce_second_map))
 
 # reduced_list = functools.reduce(add, fifth_variable)
 # print('reduce 3: ', reduced_list)
@@ -99,8 +130,10 @@ print('reduce 2: ', reduct_list)
  
  Can never give defaut values in the first place 
 """
+
+
 def add(a, b, /, c=4, *, d=4):
-    return a+b+c+d
+    return a + b + c + d
 
 
 print('Arguents: ', add(3, 4, 1, d=2))
@@ -131,8 +164,8 @@ print('** Arguments: ', percentage(math=56, english=61, science=73))
 print(type(percentage(math=56, english=61, science=73)))
 
 # lambda argument: expression
-sam_list = list(map(lambda a: a**2, range(10)))
-sam_list2 = [a**2 for a in range(10)]
+sam_list = list(map(lambda a: a ** 2, range(10)))
+sam_list2 = [a ** 2 for a in range(10)]
 print('sam1: ', sam_list)
 print('sam2: ', sam_list2)
 
@@ -142,7 +175,7 @@ print('sam2: ', sam_list2)
 enumarated_list = enumerate(sam_list)
 print('Enumerated list: ', tuple(enumarated_list))
 
-enumnerate_string = enumerate(fourth_variable) # check for reverse keys
+enumnerate_string = enumerate(fourth_variable)  # check for reverse keys
 print('enumeratestring: ', list(enumnerate_string))
 
 """
@@ -184,7 +217,6 @@ def my_function():
 my_function()
 print('3', global_variable)
 
-
 # employees_list = [['Dhanesh', 'Tester'], ['Gowtham', 'Developer'], ['Deepak', 'Developer']]
 #
 # greeting = lambda employee : print(f'Welcome {employee[0]}')
@@ -195,5 +227,35 @@ print('3', global_variable)
 enum_list = [['a', 'b'], {'c', 'd'}]
 print('enum nested list: ', list(enumerate(enum_list)))
 
-enum_dictionary = {1: 'a', 2: 'b', 3: 'c' }
+enum_dictionary = {1: 'a', 2: 'b', 3: 'c'}
 print('enum dict: ', list(enumerate(enum_dictionary)))
+
+
+#  Recursion function (which calls itself again and again whenever called)
+
+
+def factorial(x):
+    if x == 1:
+        return 1
+    elif x == 0:
+        return 0
+    else:
+        return x * factorial(x - 1)
+
+
+num = 0
+print(f'The factorial of {num} is {factorial(num)}')
+
+default_list = [1, 2, 3, 4, 5, 6]
+
+
+def is_accurate(a):
+    if a % 2 == 0:
+        return 'Even'
+    else:
+        return 'Odd'
+
+
+print('map using filter fun 5: ', list(map(is_accurate, default_list)))
+print('Filter using filter fun 6: ', list(filter(is_accurate, default_list)))
+
