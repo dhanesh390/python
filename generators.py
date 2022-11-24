@@ -63,15 +63,14 @@
 #
 # print('Sum is: ', sum(square(even_numbers(10))))
 
-numbers = (number for number in range(0, 10, 2))
+# numbers = (number for number in range(0, 10, 2))
 # print(sum(square(numbers)))
 
-for number in numbers:
-    print('first call: ', number)
-
-for number in numbers:
-    print('second call: ', number)
-
+# for number in numbers:
+#     print('first call: ', number)
+#
+# for number in numbers:
+#     print('second call: ', number)
 
 # comprehensed_list = [number**3 for number in range(1, 11) if number % 2 == 0]
 # print('Comprehensed list: ', comprehensed_list)
@@ -82,6 +81,43 @@ for number in numbers:
 # for number in comprehensed_generator:
 #     print(number)
 #
-print('generated comp sum: ', sum(number**2 for number in range(1, 11) if number % 2 == 0))
+# print('generated comp sum: ', sum(number ** 2 for number in range(1, 11) if number % 2 == 0))
+#
+# new_list = [1, 2, 3, 4, 5, 6]
+#
+# new_list = set([lambda number: number * 2 for number in new_list if number % 2 == 0])
+# print('lambda list comp: ', new_list)
+#
+# new_list = [1, 2, 3, 4, 5, 6]
+# new_list = {'1' if number % 3 == 0 else '2' for number in new_list if number % 2 == 0 or number == 2}
+# print('set comp: ', new_list)
 
+
+# sample_list = [1, 2, 3, 4, 5, 6]
+# sample_list_two = enumerate(sample_list, -3)
+# print(list(sample_list_two))
+#
+# first_list = [1, 2, 3, 4]
+
+# condition = "do something-kasi"
+#
+# list_a = condition.split()
+# final_value = ''
+# for alphabet in list_a:
+#     if "-" in alphabet:
+#         char = alphabet.split("-")
+#         for element in char:
+#             if element == char[-1]:
+#                 final_value += element[::-1]
+#             else:
+#                 final_value += element[::-1] + '-'
+#     else:
+#         final_value += alphabet[::-1] + ' '
+#         print('final: ', final_value)
+#
+# print(final_value)
+import re
+sample = 'Hi123How32Are56You'
+sample_two = sample.split()
+print(sample_two)
 

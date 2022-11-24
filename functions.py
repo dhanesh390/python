@@ -13,7 +13,7 @@ def add(a, b):
 
 """
  Zip function only takes iterables as input and returns a list
- -> It can take 0 arguments as well as n number of arguments
+ It can take 0 arguments as well as n number of arguments
 """
 print('Zip 1: ', list(zip(first_list, second_list, third_list)))
 
@@ -65,7 +65,6 @@ filtered_list_two = filter(is_even, fourth_variable)
 
 filter_list_three = filter(is_even, map(add, first_list, second_list))
 
-
 # filter_list_four = filter(is_even, map(add, zip(first_list, second_list), third_list))
 # print('fiter map zip: ', list(filter_list_four))
 
@@ -98,6 +97,7 @@ print('reduce 2: ', reduct_list)
 #  Reduce doesn't work with int types whereas it works for other iterables
 reduce_second_list = zip(second_list, functools.reduce(add, fourth_variable))
 print('reduced zip 2: ', list(reduce_second_list))
+
 
 # reduce_first_list = map(add, second_list, functools.reduce(add, first_list))
 # print('reduced zip 3: ', reduce_first_list)
@@ -206,9 +206,9 @@ global_variable = 10
 
 
 def my_function():
-    global global_variable
-    global_variable = 20
-    global_variable += 2
+    #global global_variable
+    # global_variable = 20
+    # global_variable += 2
     local_variable = 15
     print('1', global_variable)
     print('2', local_variable)
@@ -259,3 +259,15 @@ def is_accurate(a):
 print('map using filter fun 5: ', list(map(is_accurate, default_list)))
 print('Filter using filter fun 6: ', list(filter(is_accurate, default_list)))
 
+
+def tower_of_hanoi(n, source, destination, auxiliary):
+    if n == 1:
+        print("Move disk 1 from source", source, "to destination", destination)
+        return
+    tower_of_hanoi(n - 1, source, auxiliary, destination)
+    print("Move disk", n, "from source", source, "to destination", destination)
+    tower_of_hanoi(n - 1, auxiliary, destination, source)
+
+
+n = 3
+tower_of_hanoi(n, 'A', 'B', 'C')

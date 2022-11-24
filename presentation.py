@@ -37,6 +37,24 @@ seventh_list = [
     for x in seventh_list for y in x]
 print('Nested list comprehension 1: ', seventh_list)
 
+new_list = [1, 2, 3, 4, 5, 6]
+new_list = ['1' if number % 3 == 0 else '2' for number in new_list if number % 2 == 0 or number == 3]
+print('list comp 1 with filter: ', new_list)
+
+#  Set comprehension
+
+new_list = [1, 2, 3, 4, 5, 6]
+new_list = {number-1 if number % 3 == 0 else number for number in new_list if number % 2 == 0 or number == 3}
+print('set comp: ', new_list)
+
+# Dictionary comprehension
+
+employees_list = [{'name': 'Dhanesh', 'role': 'Software developer'}, {'name': 'Deepak', 'role': 'Software developer'},
+                  {'name': 'Hari', 'role': 'Testing'}]
+
+developers_list = {employee['name']: employee['role'] for employee in employees_list if 'developer' in employee['role']}
+print('Dict comp: ', developers_list)
+
 # Generators
 
 # def is_even(number):
@@ -68,11 +86,12 @@ number_list = [1, 2, 3, 4, 5]
 # print('list comp: ', number_list)
 
 number_list = (number * 2 for number in number_list)
-print('generator comprehension: ', next(number_list))
-print('generator comprehension: ', next(number_list))
-# print('generator comprehension: ', next(number_list))
-# print('generator comprehension: ', next(number_list))
-# print('generator comprehension: ', next(number_list))
+print('generator comprehension 1: ', next(number_list))
+print('generator comprehension 2: ', next(number_list))
+# print('generator comprehension 3: ', next(number_list))
+# print('generator comprehension 4: ', next(number_list))
+# print('generator comprehension 5: ', next(number_list))
+# print('generator comprehension 6: ', next(number_list))
 
 for number in number_list:
     print(f'generated value: ', number)
@@ -103,3 +122,34 @@ def square(numbers):
 
 
 print('Sum is: ', sum(square(even_numbers(10))))
+
+
+global_variable = 10
+print('0', global_variable)
+
+
+def outer():
+    """ Outer function of a nested function declaration"""
+    # global_variable = 12
+    # print('1', global_variable)
+    global global_variable  # It reflects the changes that occurs to a global variable
+    global_variable = 14
+    print('2', global_variable)
+    local_variable = 20
+    print('3', local_variable)
+
+    def inner():
+        """ Inner function of a nested function declaration"""
+        # local_variable = 22
+        # print('4', local_variable)
+        #  It reflects the changes that occurs to the local variable declared inside a fucntion
+        nonlocal local_variable
+        local_variable = 24
+        print('5', local_variable)
+
+    inner()  # calling the inner function
+    print('6', local_variable)
+
+
+outer()  # calling the outer function
+print('7', global_variable)
