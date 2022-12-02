@@ -26,6 +26,7 @@
 """
 import time
 
+
 # print(my_function())
 
 # def add(variable_one, variable_two,
@@ -238,40 +239,52 @@ import time
 # print('filter: ', list(filter(is_even, sample_list)))
 # print('map: ', list(map(is_even, sample_list)))
 
-sample_list = ['{', '}', '{', '[', ']', '(', ')', '{', '}', '}', '[', '(', ']', ')']
+# sample_list = ['{', '}', '{', '[', ']', '(', ')', '{', '}', '}', '[', '(', ']', ')']
+#
+#
+# def check_count(*list_of_tuples):
+#     count = 0
+#     for pair in list_of_tuples:
+#         if sample_list.count(pair[0]) <= sample_list.count(pair[1]):
+#             count += sample_list.count(pair[0])
+#         else:
+#             count += sample_list.count(pair[1])
+#     return count
+#
+#
+# count = check_count(['{', '}'], ['[', ']'], ['(', ')'])
+# print('Count: ', count)
 
 
-def check_count(*list_of_tuples):
-    count = 0
-    for pair in list_of_tuples:
-        if sample_list.count(pair[0]) <= sample_list.count(pair[1]):
-            count += sample_list.count(pair[0])
-        else:
-            count += sample_list.count(pair[1])
-    return count
+# sample_string = '>Al<*97?FY*R:d!vg$v'
+# final_string = ''
+# counter_string = [x for x in sample_string]
+# for count, char in enumerate(counter_string):
+#     if 48 <= ord(char) <= 57:
+#         counter_string[count] = '0'
+#     elif 32 <= ord(char) <= 47:
+#         counter_string[count] = '#'
+#     elif 65 <= ord(char) <= 98:
+#         counter_string[count] = chr(ord(char) + 32)
+#     elif 97 <= ord(char) <= 122:
+#         counter_string[count] = chr(ord(char) - 32)
+#     elif 58 <= ord(char) <= 64:
+#         counter_string[count] = '@'
+#
+# for j in counter_string:
+#     final_string += j
+# print('result: ', final_string)
 
 
-count = check_count(['{', '}'], ['[', ']'], ['(', ')'])
-print('Count: ', count)
+# for i in range(rows):
+#     if i != rows - 1:
+#         print(" " * i + str(rows - i) + (" " * (2 * (rows - 1 - i) - 1) + str(rows - i)))
+#     else:
+#         print(" " * i + str(rows - i))
+# for i in range(1, rows):
+#     print(" " * (rows - i - 1) + str(i + 1) + (" " * (2 * i - 1) + str(i + 1)))
 
-
-sample_string = '>Al<*97?FY*R:d!vg$v'
-final_string = ''
-counter_string = [x for x in sample_string]
-for count, char in enumerate(counter_string):
-    if 48 <= ord(char) <= 57:
-        counter_string[count] = '0'
-    elif 32 <= ord(char) <= 47:
-        counter_string[count] = '#'
-    elif 65 <= ord(char) <= 98:
-        counter_string[count] = chr(ord(char) + 32)
-    elif 97 <= ord(char) <= 122:
-        counter_string[count] = chr(ord(char) - 32)
-    elif 58 <= ord(char) <= 64:
-        counter_string[count] = '@'
-
-for j in counter_string:
-    final_string += j
-print('result: ', final_string)
-
+# list_of_values = input('Enter the list: ').split(" ")
+# for i in list_of_values:
+#     print('values: ',i)
 
