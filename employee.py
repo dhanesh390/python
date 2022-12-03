@@ -32,11 +32,15 @@ class Employee:
     def calculate_age(date_of_birth):
         pass
 
+
 class Developer(Employee):
     pass
 
+
 class Tester(Employee):
     pass
+
+
 # first_employee = Employee('dhanesh', 'developer')
 # print(first_employee)
 second_employee = Employee('Dhanesh', 'Kumar', '11.07.22', 'developer')
